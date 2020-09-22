@@ -31,5 +31,7 @@ group :test do
   gem 'webdrivers'
 end
 
+gem 'bootstrap', '~> 4.5.2'
+gem 'jquery-rails'
 gem 'russian', '~> 0.6.0'
 gem 'slim-rails'
