@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @foil.title
+p
+  strong Description:
+  = @foil.description
+
+=> link_to 'Edit', edit_foil_path(@foil)
+'|
+=< link_to 'Back', foils_path

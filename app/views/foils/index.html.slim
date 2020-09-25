@@ -1,0 +1,23 @@
+h1 Listing foils
+
+table
+  thead
+    tr
+      th Title
+      th Description
+      th
+      th
+      th
+
+  tbody
+    - @foils.each do |foil|
+      tr
+        td = foil.title
+        td = foil.description
+        td = link_to 'Show', foil
+        td = link_to 'Edit', edit_foil_path(foil)
+        td = link_to 'Destroy', foil, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Foil', new_foil_path

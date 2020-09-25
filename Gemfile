@@ -32,6 +32,10 @@ group :test do
 end
 
 gem 'bootstrap', '~> 4.5.2'
+gem 'devise'
+gem 'devise-i18n'
+gem 'font-awesome-sass', '~> 5.13.0'
 gem 'jquery-rails'
 gem 'russian', '~> 0.6.0'
+gem 'simple_form'
 gem 'slim-rails'
