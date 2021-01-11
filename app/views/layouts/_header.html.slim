@@ -5,12 +5,8 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
   #navbarText.collapse.navbar-collapse
     ul.navbar-nav.mr-auto
       li.nav-item.active
-        a.nav-link href="#" 
-          | Home
-          span.sr-only (current)
+        = link_to  "Home", root_path, class: 'nav-link' 
       li.nav-item
-        a.nav-link href="#"  Features
-      li.nav-item
-        a.nav-link href="#"  Pricing
+        = link_to  "Captive", captive_path, class: 'nav-link' 
     span.navbar-text
       | Navbar text with an inline element
