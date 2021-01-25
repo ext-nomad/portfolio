@@ -9,12 +9,12 @@ html
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
   body
-    header
+    header.border-bottom.border-dark.soap
       = render 'layouts/header'
 
     main
       .container
         = yield
 
-    footer
+    footer.border-top.border-dark.soap
       = render 'layouts/footer'

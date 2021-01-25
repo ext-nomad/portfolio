@@ -7,19 +7,21 @@
 .text-center
   .row
     .col
-      table.table.table-hover.table-sm.text-center
-        thead
-          tr
-            th scope="col"  ID
-            th scope="col"  URL
-            th scope="col"  Short description
-        tbody
-          - if current_user.foils.any?
-            - current_user.foils.each do |stock|
+      .card.soap
+        .card-header.p-0
+          table.table.table-hover.table-sm.text-center.m-0
+            thead.thead-dark
               tr
-                td = foil.id
-                td = foil.url
-                td = foil.short_description
-          - else
-            tr
-              td colspan="3" You don't have any foils yet
+                th scope="col"  ID
+                th scope="col"  URL
+                th scope="col"  Short description
+            tbody
+              - if current_user.foils.any?
+                - current_user.foils.each do |stock|
+                  tr
+                    td = foil.id
+                    td = foil.url
+                    td = foil.short_description
+              - else
+                tr
+                  td colspan="3" You don't have any foils yet

@@ -4,10 +4,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background: linear-gradient(
-      rgba(255, 254, 254, 0.75),
-      rgba(255, 255, 255, 0.75)
-    ),
+  background: linear-gradient(rgba(255, 254, 254, 0), rgba(255, 255, 255, 0)),
     url("../../assets/images/bg.png");
   background-attachment: fixed;
   background-position: center;
@@ -17,7 +14,7 @@ body {
 
 header {
   margin-bottom: 50px;
-  background: transparent !important;
+  // background: transparent !important;
   .navbar-brand {
     letter-spacing: -1px;
     font-weight: bold;
@@ -31,13 +28,22 @@ main {
 footer {
   margin-top: 20px;
   padding: 20px 0px;
-  background: transparent;
+  // background: transparent;
   // background-color: white;
   a:not(.btn) {
-    color: #444444;
+    color: #ffffff;
   }
   a:hover {
-    color: rgb(150, 150, 150);
+    color: rgb(85, 85, 85);
     text-decoration: none;
   }
+}
+
+.soap {
+  color: white;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15)
+  ) !important;
+  backdrop-filter: blur(15px);
 }
