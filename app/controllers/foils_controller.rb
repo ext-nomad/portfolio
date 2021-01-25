@@ -3,11 +3,6 @@ class FoilsController < ApplicationController
 
   def index
     @foils = Foil.all
-  end
-
-  def show; end
-
-  def new
     @foil = Foil.new
   end
 
@@ -15,26 +10,27 @@ class FoilsController < ApplicationController
 
   def create
     @foil = Foil.new(foil_params)
+    @foil.user = current_user
 
     if @foil.save
-      redirect_to @foil, notice: 'Foil was successfully created.'
+      redirect_to foils_path, notice: 'Foil was successfully created.'
     else
-      render :new
+      render :index
     end
   end
 
   def update
     if @foil.update(foil_params)
-      redirect_to @foil, notice: 'Foil was successfully updated.'
+      redirect_to foils_path, notice: 'Foil was successfully updated.'
     else
       render :edit
     end
   end
 
-  def destroy
-    @foil.destroy
-    redirect_to foils_url, notice: 'Foil was successfully destroyed.'
-  end
+  # def destroy
+  #   @foil.destroy
+  #   redirect_to foils_url, notice: 'Foil was successfully destroyed.'
+  # end
 
   private
 
@@ -43,6 +39,6 @@ class FoilsController < ApplicationController
   end
 
   def foil_params
-    params.require(:foil).permit(:title, :description)
+    params.require(:foil).permit(:title, :description, :short_description, :url)
   end
 end

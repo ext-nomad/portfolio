@@ -1,8 +1,20 @@
-h1 Editing foil
+.text-center
+  h1 Editing foil
 
-== render 'form'
+.card.soap
+  .card-header
+    = simple_form_for(@foil) do |f|
+      = f.error_notification
+      = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
-=> link_to 'Show', @foil
-'|
-=< link_to 'Back', foils_path
+      .form-group.row.mt-3
+        .col-sm-9
+          = f.text_field :title, placeholder: 'Title', autofocus: true, class: 'form-control form-control-lg mb-3'
+          = f.text_field :url, placeholder: 'URL in format: "xxxxx.xxx"', autofocus: true, class: 'form-control form-control-lg mb-3'
+          = f.text_field :short_description, placeholder: 'Short description', autofocus: true, class: 'form-control form-control-lg mb-3'
+          = f.rich_text_area :description
+
+        .col-sm-3
+          = f.button :submit, 'Update foil', class: 'btn-success btn-block btn-lg'
+
 

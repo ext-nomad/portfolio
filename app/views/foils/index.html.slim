@@ -1,13 +1,12 @@
 .text-center
-  h1 Listing foils
-  .search-area
-    h3 Add a foil
-    / = render 'form'
+  h1.mb-3 Listing foils
+
+= render 'form'
 
 .text-center
   .row
     .col
-      .card.soap
+      .card.shadow.soap.mt-3
         .card-header.p-0
           table.table.table-hover.table-sm.text-center.m-0
             thead.thead-dark
@@ -17,11 +16,8 @@
                 th scope="col"  Short description
             tbody
               - if current_user.foils.any?
-                - current_user.foils.each do |stock|
-                  tr
-                    td = foil.id
-                    td = foil.url
-                    td = foil.short_description
+                - current_user.foils.each do |foil|
+                  = render 'foils/foil_preview', foil: foil
               - else
                 tr
                   td colspan="3" You don't have any foils yet
