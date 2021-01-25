@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  #
+  has_many :foils, dependent: :nullify
+  
   devise :database_authenticatable,
          :registerable,
          :recoverable,
