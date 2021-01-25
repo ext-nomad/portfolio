@@ -2,10 +2,9 @@
   = f.error_notification
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
-  .form-inputs
-    = f.input :title
-    = f.label :description
-    = f.rich_text_area :description
+  .form-group.row.mt-3
+    .col-sm-9
+      = f.text_field :url, placeholder: 'URL in format: "xxxxx.xxx"', autofocus: true, class: 'form-control form-control-lg'
 
-  .form-actions
-    = f.button :submit
+    .col-sm-3
+      = f.button :submit, 'Add foil', class: 'btn-success btn-block btn-lg'

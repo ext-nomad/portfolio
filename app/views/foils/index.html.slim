@@ -1,23 +1,25 @@
-h1 Listing foils
+.text-center
+  h1 Listing foils
+  .search-area
+    h3 Add a foil
+    / = render 'form'
 
-table
-  thead
-    tr
-      th Title
-      th Description
-      th
-      th
-      th
-
-  tbody
-    - @foils.each do |foil|
-      tr
-        td = foil.title
-        td = foil.description
-        td = link_to 'Show', foil
-        td = link_to 'Edit', edit_foil_path(foil)
-        td = link_to 'Destroy', foil, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New Foil', new_foil_path
+.text-center
+  .row
+    .col
+      table.table.table-hover.table-sm.text-center
+        thead
+          tr
+            th scope="col"  ID
+            th scope="col"  URL
+            th scope="col"  Short description
+        tbody
+          - if current_user.foils.any?
+            - current_user.foils.each do |stock|
+              tr
+                td = foil.id
+                td = foil.url
+                td = foil.short_description
+          - else
+            tr
+              td colspan="3" You don't have any foils yet
