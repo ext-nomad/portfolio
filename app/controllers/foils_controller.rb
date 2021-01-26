@@ -41,6 +41,7 @@ class FoilsController < ApplicationController
         # c.background 'white'
         # c.extent '1920x1080'
         # c.gravity 'north'
+        # c.delay 0.2
         c.quality 90
         c.scale(-1)
       end

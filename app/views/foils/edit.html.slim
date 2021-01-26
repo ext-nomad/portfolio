@@ -12,9 +12,9 @@
           = f.text_field :title, placeholder: 'Title', autofocus: true, class: 'form-control form-control-lg mb-3'
           = f.text_field :url, placeholder: 'URL in format: "xxxxx.xxx"', autofocus: true, class: 'form-control form-control-lg mb-3'
           = f.text_field :short_description, placeholder: 'Short description', autofocus: true, class: 'form-control form-control-lg mb-3'
-          = f.rich_text_area :description
+          = f.rich_text_area :description, class: "trix-content customized-height"
 
         .col-sm-3
-          = f.button :submit, 'Update foil', class: 'btn-success btn-block btn-lg'
+          = f.button :submit, 'Update foil', class: 'btn-success btn-block btn-lg mb-3'
 
-
+          = image_tag  "#{@foil.img_fetch ? @foil.url : 'no_image'}.png", class: "img-fluid img-thumbnail", style: "max-height: 25em; width: 100%;"

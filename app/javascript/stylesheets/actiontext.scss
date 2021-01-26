@@ -12,6 +12,10 @@
   background-color: white;
   color: black;
 
+  &.customized-height {
+    min-height: 14.6em;
+  }
+
   .attachment-gallery {
     > action-text-attachment,
     > .attachment {
