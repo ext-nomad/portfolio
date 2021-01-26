@@ -1,4 +1,15 @@
-.card.shadow.soap
-  .card-header
-    h1 Home#index
-  .card-body
+.container-fluid
+  .scene.soap
+    .carousel data-cells="#{User.first.foils.count}"
+      - User.first.foils.each do |foil|
+        .carousel_cell style="background: url(#{image_path 'bg.png'}); background-repeat: no-repeat; background-size: cover; background-position: center; color: white;"
+          
+          = foil.url
+          .row
+          = link_to  "Foils", foils_path 
+
+  .carousel-options.soap
+    p
+      button.previous-button Previous
+      button.next-button Next
+    p
