@@ -1,6 +1,7 @@
 tr style="transform: rotate(0);" data-placement="bottom" data-toggle="tooltip" title=("Click to edit this foil")
   th scope="row"
-    = link_to edit_foil_path(foil), class: "stretched-link" do
+    / = link_to edit_foil_path(foil), class: "stretched-link" do
+    = link_to foils_capture_path(foil), method: :post, class: "stretched-link" do
     = foil.id
   td = foil.url
   td = foil.short_description

@@ -32,6 +32,21 @@ class FoilsController < ApplicationController
   #   redirect_to foils_url, notice: 'Foil was successfully destroyed.'
   # end
 
+  def capture
+    url = Foil.find(params[:format]).url
+    ws = Webshot::Screenshot.instance
+    ws.capture("http://#{url}/", "app/assets/images/#{url}.png") do |magic|
+      magic.combine_options do |c|
+        # c.thumbnail '1000x'
+        # c.background 'white'
+        # c.extent '1920x1080'
+        # c.gravity 'north'
+        c.quality 90
+        c.scale(-1)
+      end
+    end
+  end
+
   private
 
   def set_foil

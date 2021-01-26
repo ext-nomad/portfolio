@@ -18,7 +18,6 @@ $(document).on("turbolinks:load", function () {
   var cellCount = carousel.dataset.cells;
   var selectedIndex = 0;
   var radius, theta;
-  // console.log( cellWidth, cellHeight );
 
   function rotateCarousel() {
     var angle = theta * selectedIndex * -1;

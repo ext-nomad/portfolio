@@ -1,10 +1,9 @@
 .scene {
-  border: 1px solid #ccc;
-  margin: 40px 0;
+  // border: 1px solid #ccc;
   position: relative;
   width: 630px;
   height: 620px;
-  margin: 80px auto;
+  margin: 10px 0;
   perspective: 1000px;
 }
 
@@ -62,7 +61,20 @@
   }
 }
 
-.carousel-options {
-  text-align: center;
-  position: relative;
+.hidden {
+  opacity: 0;
+  transform: none;
+  z-index: 0;
+}
+
+.arrows {
+  margin: 10px 0px;
+  z-index: 1050;
+  height: 620px;
+  color: rgba(255, 255, 255, 0.8);
+  &:hover {
+    color: rgba(68, 68, 68, 0.9);
+  }
+
+  // background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15));
 }
