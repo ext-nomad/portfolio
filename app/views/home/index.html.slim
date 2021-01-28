@@ -5,9 +5,19 @@
       button.previous-button.stretched-link.hidden
     .col.p-0
       .scene.soap
-          .carousel data-cells="#{User.first.foils.count}"
-            - User.first.foils.each do |foil|
+          .carousel data-cells="#{@foils.count}"
+            - @foils.each do |foil|
               .carousel_cell style="background: url(#{image_path (foil.img_fetch ? foil.url : 'no_image') + ".png"});background-repeat: repeat-y; background-size: 100%; background-position: top;"
+      .plate.soap
+        .row
+
+        .row
+          .col
+
+          .col
+        
+        .row
+          
     .col.d-flex.justify-content-end.align-items-center.p-0.arrows
       button.next-button.stretched-link.hidden
       .fas.fa-7x.fa-chevron-right
