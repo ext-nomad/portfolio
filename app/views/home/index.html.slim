@@ -4,21 +4,23 @@
       .fas.fa-7x.fa-chevron-left
       button.previous-button.stretched-link.hidden
     .col.p-0
-      .scene.soap
+      .scene.rounded-top.soap
           .carousel data-cells="#{@foils.count}"
             - @foils.each do |foil|
               .carousel_cell style="background: url(#{image_path (foil.img_fetch ? foil.url : 'no_image') + ".png"});background-repeat: repeat-y; background-size: 100%; background-position: top;"
-      .plate.soap
-        .row
+      
+      - @foils.each_with_index do |foil, index|
+        .plate.rounded-bottom.soap.mb-3 id="part#{index + 1}"
+            .text-center
+              = foil.title
+            .transparent-bg
+              = raw(foil.description)
+            .text-center
+              = link_to  "edit", edit_foil_path(foil), class: 'btn btn-sm btn-primary'
 
-        .row
-          .col
 
-          .col
-        
-        .row
-          
     .col.d-flex.justify-content-end.align-items-center.p-0.arrows
       button.next-button.stretched-link.hidden
       .fas.fa-7x.fa-chevron-right
+
 

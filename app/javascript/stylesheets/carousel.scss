@@ -8,10 +8,11 @@
 }
 
 .plate {
-  position: relative;
+  position: absolute;
   width: 30vw;
   height: 40vh;
   margin: 0;
+  // transition: 0.5s ease;
 }
 
 .carousel {
