@@ -10,13 +10,21 @@
               .carousel_cell style="background: url(#{image_path (foil.img_fetch ? foil.url : 'no_image') + ".png"});background-repeat: repeat-y; background-size: 100%; background-position: top;"
       
       - @foils.each_with_index do |foil, index|
-        .plate.rounded-bottom.soap.mb-3 id="part#{index + 1}"
-            .text-center
-              = foil.title
-            .transparent-bg
-              = raw(foil.description)
-            .text-center
-              = link_to  "edit", edit_foil_path(foil), class: 'btn btn-sm btn-primary'
+        .plate.rounded-bottom.soap.mb-3
+          .text-center
+            h3= foil.title
+          .row
+            .col-6
+              
+            .col-6
+
+          .transparent-bg
+            = raw(foil.description)
+
+          .text-center.fixed-bottom
+            = link_to  "edit", edit_foil_path(foil), class: 'btn btn-sm btn-primary mb-2 ml-2'
+            = link_to  "edit", edit_foil_path(foil), class: 'btn btn-sm btn-primary mb-2 ml-2'
+            = link_to  "edit", edit_foil_path(foil), class: 'btn btn-sm btn-primary mb-2 ml-2'
 
 
     .col.d-flex.justify-content-end.align-items-center.p-0.arrows
