@@ -11,7 +11,7 @@
         .col-sm-9
           = f.text_field :title, placeholder: 'Title', autofocus: true, class: 'form-control form-control-lg mb-3'
           = f.text_field :url, placeholder: 'URL in format: "xxxxx.xxx"', autofocus: true, class: 'form-control form-control-lg mb-3'
-          = f.text_field :short_description, placeholder: 'Short description', autofocus: true, class: 'form-control form-control-lg mb-3'
+          = f.text_field :short_description, placeholder: 'Short description ~120chars', autofocus: true, class: 'form-control form-control-lg mb-3'
           = f.rich_text_area :description, class: "trix-content customized-height"
 
         .col-sm-3
