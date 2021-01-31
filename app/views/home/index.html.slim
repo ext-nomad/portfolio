@@ -1,34 +1,33 @@
+.row
+  .col.d-flex.justify-content-center.align-items-center.p-0.arrows
+    .fas.fa-7x.fa-chevron-left
+    button.previous-button.stretched-link.hidden
+  .col.p-0
+    .scene.rounded-top.soap
+        .carousel data-cells="#{@foils.count}"
+          - @foils.each do |foil|
+            .carousel_cell style="background: url(#{image_path (foil.img_fetch ? foil.url : 'no_image') + ".png"});background-repeat: repeat-y; background-size: 100%; background-position: top;"
+    
+    - @foils.each_with_index do |foil, index|
+      .plate.rounded-bottom.soap.mb-3
+        .text-center
+          h3= foil.title
+        .row
+          .col-6
+            
+          .col-6
+            = foil.to_s
+        .transparent-bg
+          = raw(foil.description)
 
-  .row
-    .col.d-flex.justify-content-start.align-items-center.p-0.arrows
-      .fas.fa-7x.fa-chevron-left
-      button.previous-button.stretched-link.hidden
-    .col.p-0
-      .scene.rounded-top.soap
-          .carousel data-cells="#{@foils.count}"
-            - @foils.each do |foil|
-              .carousel_cell style="background: url(#{image_path (foil.img_fetch ? foil.url : 'no_image') + ".png"});background-repeat: repeat-y; background-size: 100%; background-position: top;"
-      
-      - @foils.each_with_index do |foil, index|
-        .plate.rounded-bottom.soap.mb-3
-          .text-center
-            h3= foil.title
-          .row
-            .col-6
-              
-            .col-6
-
-          .transparent-bg
-            = raw(foil.description)
-
-          .text-center.fixed-bottom
-            = link_to  "edit", edit_foil_path(foil), class: 'btn btn-sm btn-primary mb-2 ml-2'
-            = link_to  "edit", edit_foil_path(foil), class: 'btn btn-sm btn-primary mb-2 ml-2'
-            = link_to  "edit", edit_foil_path(foil), class: 'btn btn-sm btn-primary mb-2 ml-2'
+        .text-center.fixed-bottom
+          = link_to  "edit", edit_foil_path(foil), class: 'btn btn-sm btn-primary mb-2 ml-2'
+          = link_to  "edit", edit_foil_path(foil), class: 'btn btn-sm btn-primary mb-2 ml-2'
+          = link_to  "edit", edit_foil_path(foil), class: 'btn btn-sm btn-primary mb-2 ml-2'
 
 
-    .col.d-flex.justify-content-end.align-items-center.p-0.arrows
-      button.next-button.stretched-link.hidden
-      .fas.fa-7x.fa-chevron-right
+  .col.d-flex.justify-content-center.align-items-center.p-0.arrows
+    button.next-button.stretched-link.hidden
+    .fas.fa-7x.fa-chevron-right
 
 

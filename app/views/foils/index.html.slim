@@ -1,11 +1,12 @@
 .text-center
   h1.mb-3 Listing foils
 
+
 = render 'form'
 
 .text-center
   .row
-    .col
+    .col-sm-9
       .card.shadow.soap.mt-3
         .card-header.p-0
           table.table.table-hover.table-sm.text-center.m-0
@@ -17,7 +18,22 @@
             tbody
               - if current_user.foils.any?
                 - current_user.foils.each do |foil|
-                  = render 'foils/foil_preview', foil: foil
+                  = render 'foils/foil_preview', foil: foil 
               - else
                 tr
                   td colspan="3" You don't have any foils yet
+    - if current_user.foils.any?
+      .col-sm-3
+        .card.shadow.soap.mt-3
+            .card-header.p-0
+              table.table.table-hover.table-sm.text-center.m-0
+                thead.thead-dark
+                  tr
+                    th scope="col"  Quick actions
+                tbody
+                  - current_user.foils.each do |foil|
+                    tr
+                      td
+                        = link_to "refresh", foils_refresh_path(foil), method: :post
+                        |  | 
+                        = link_to  "delete", foil_path(foil), method: :delete

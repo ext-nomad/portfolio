@@ -48,3 +48,7 @@ footer {
   ) !important;
   backdrop-filter: blur(15px);
 }
+
+.highground {
+  z-index: 1000;
+}

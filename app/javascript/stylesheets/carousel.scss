@@ -1,7 +1,7 @@
 .scene {
   // border: 1px solid #ccc;
   position: relative;
-  width: 30vw;
+  width: 35vw;
   height: 30vh;
   margin: 10px 0;
   perspective: 1000px;
@@ -9,7 +9,7 @@
 
 .plate {
   position: absolute;
-  width: 30vw;
+  width: 35vw;
   height: 40vh;
   margin: 0;
   padding: 10px 10px;
@@ -28,7 +28,7 @@
 
 .carousel_cell {
   position: absolute;
-  width: calc(30vw - 20px);
+  width: calc(35vw - 20px);
   height: calc(30vh - 20px);
   left: 10px;
   top: 10px;
