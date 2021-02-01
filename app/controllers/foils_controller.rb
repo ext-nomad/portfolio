@@ -33,8 +33,10 @@ class FoilsController < ApplicationController
   end
 
   def refresh
-    Foil.find(params[:format]).capture
-    redirect_to foils_path, notice: 'refreshed'
+    foil = Foil.find(params[:format])
+    foil.capture
+    foil.update(img_fetch: true)
+    redirect_to foils_path, notice: 'Refreshed'
   end
 
   private

@@ -13,16 +13,18 @@
         .text-center
           h3= foil.title
         .row
-          .col-6
+          .col
             .text-center
               strong Short description:
-            
-            = simple_format(foil.short_description)
-          .col-6
+              br
+            .transparent-bg
+              = raw(foil.description)
+        .row
+          .col
             .text-center
               strong Technology used:
-            
-            = foil.to_s
+              br
+              = foil.to_s
 
         .text-center.fixed-bottom
           a target="_blank" rel="noopener noreferrer" class='btn btn-sm btn-dark mb-2 ml-2' href="#{foil.to_s}" 
